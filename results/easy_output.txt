@@ -1,0 +1,140 @@
+======================================================================
+       SUDOKU SOLVER BENCHMARK (C++)
+======================================================================
+
+Puzzle: easy
+Size: 9x9
+Clues: 30 / 81
+
+Initial Puzzle:
+-------------
+| 5 3 . | . 7 . | . . . |
+| 6 . . | 1 9 5 | . . . |
+| . 9 8 | . . . | . 6 . |
+-------------
+| 8 . . | . 6 . | . . 3 |
+| 4 . . | 8 . 3 | . . 1 |
+| 7 . . | . 2 . | . . 6 |
+-------------
+| . 6 . | . . . | 2 8 . |
+| . . . | 4 1 9 | . . 5 |
+| . . . | . 8 . | . 7 9 |
+-------------
+
+======================================================================
+              BACKTRACKING SOLVER
+======================================================================
+
+[MRV + Forward Checking]
+  ✓ Solved in 0.002511s
+    Decisions: 51, Backtracks: 0
+
+[MRV only]
+  ✓ Solved in 0.001094s
+    Decisions: 51, Backtracks: 0
+
+[Forward Checking only]
+  ✓ Solved in 0.009059s
+    Decisions: 516, Backtracks: 465
+
+[No heuristics]
+  ✓ Solved in 0.036593s
+    Decisions: 4208, Backtracks: 5403
+
+  Solved Grid (Backtracking):
+-------------
+| 5 3 4 | 6 7 8 | 9 1 2 |
+| 6 7 2 | 1 9 5 | 3 4 8 |
+| 1 9 8 | 3 4 2 | 5 6 7 |
+-------------
+| 8 5 9 | 7 6 1 | 4 2 3 |
+| 4 2 6 | 8 5 3 | 7 9 1 |
+| 7 1 3 | 9 2 4 | 8 5 6 |
+-------------
+| 9 6 1 | 5 3 7 | 2 8 4 |
+| 2 8 7 | 4 1 9 | 6 3 5 |
+| 3 4 5 | 2 8 6 | 1 7 9 |
+-------------
+  ✓ Backtracking solution verified as CORRECT!
+
+
+======================================================================
+               SAT SOLVER (DPLL)
+======================================================================
+Generating CNF clauses...
+Generated 12018 clauses for 729 variables.
+
+
+[All heuristics]
+  ✓ Solved in 0.002016s
+    Decisions: 0, Unit Props: 729, Backtracks: 0, Backjumps: 0
+
+[Unit Prop + VSIDS]
+  ✓ Solved in 0.003449s
+    Decisions: 0, Unit Props: 729, Backtracks: 0, Backjumps: 0
+
+[Unit Prop + Pure Literal]
+  ✓ Solved in 0.001726s
+    Decisions: 0, Unit Props: 729, Backtracks: 0, Backjumps: 0
+
+[Unit Propagation only]
+  ✓ Solved in 0.002121s
+    Decisions: 0, Unit Props: 729, Backtracks: 0, Backjumps: 0
+
+[VSIDS only]
+  ✓ Solved in 17.698370s
+    Decisions: 366780, Unit Props: 0, Backtracks: 732750, Backjumps: 0
+
+[Pure Literal only]
+  ✗ TIMEOUT (exceeded 30 seconds)
+
+[No heuristics]
+  ✗ TIMEOUT (exceeded 30 seconds)
+
+  Solved Grid (SAT Solver):
+-------------
+| 5 3 4 | 6 7 8 | 9 1 2 |
+| 6 7 2 | 1 9 5 | 3 4 8 |
+| 1 9 8 | 3 4 2 | 5 6 7 |
+-------------
+| 8 5 9 | 7 6 1 | 4 2 3 |
+| 4 2 6 | 8 5 3 | 7 9 1 |
+| 7 1 3 | 9 2 4 | 8 5 6 |
+-------------
+| 9 6 1 | 5 3 7 | 2 8 4 |
+| 2 8 7 | 4 1 9 | 6 3 5 |
+| 3 4 5 | 2 8 6 | 1 7 9 |
+-------------
+  ✓ SAT solution verified as CORRECT!
+
+
+======================================================================
+                    SUMMARY
+======================================================================
+
+Backtracking Solver:
+Configuration                 Time (s)       Decisions      Backtracks
+----------------------------------------------------------------------
+MRV + Forward Checking        0.002511       51             0
+MRV only                      0.001094       51             0
+Forward Checking only         0.009059       516            465
+No heuristics                 0.036593       4208           5403
+
+SAT Solver:
+Configuration                 Time (s)       Decisions      Unit Props     Backtracks  Backjumps
+------------------------------------------------------------------------------------------
+All heuristics                0.002016       0              729            0           0
+Unit Prop + VSIDS             0.003449       0              729            0           0
+Unit Prop + Pure Literal      0.001726       0              729            0           0
+Unit Propagation only         0.002121       0              729            0           0
+VSIDS only                    17.698370      366780         0              732750      0
+Pure Literal only             > 30.000000    N/A            N/A            N/A         N/A
+No heuristics                 > 30.000000    N/A            N/A            N/A         N/A
+
+======================================================================
+✓ RESULTS SAVED
+======================================================================
+  Output:       results/easy_output.txt
+  Backtracking: results/backtracking_results.csv
+  SAT Solver:   results/sat_results.csv
+======================================================================

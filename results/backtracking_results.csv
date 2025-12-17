@@ -1,0 +1,5 @@
+Puzzle,Clues,Configuration,Time_s,Decisions,Backtracks
+hard,21,MRV + Forward Checking,0.223569,10101,10041
+hard,21,MRV only,0.153232,10101,10963
+hard,21,Forward Checking only,0.263126,22067,22007
+hard,21,No heuristics,0.561707,49558,65974

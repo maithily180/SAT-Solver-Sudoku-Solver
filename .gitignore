@@ -1,0 +1,47 @@
+# Ignore compiled binaries
+sat_solver.exe
+*.exe
+*.out
+*.exe.stackdump
+
+# Virtualenv
+venv/
+
+# Object files
+*.o         
+*.obj
+
+# Build directories
+build/
+cmake-build-debug/
+
+# Visual Studio / Visual C++
+*.vcxproj*
+*.sln
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*~
+
+# Logs
+*.log
+
+# Mac/OSX
+.DS_Store
+
+# MinGW / MSYS2
+*.dll
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# JetBrains
+.idea/
